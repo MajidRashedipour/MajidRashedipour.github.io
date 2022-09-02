@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <main>
+        <section class="home">
+            <div class="photo-box">
+                <img src="images/remini.jpg" alt="Majidrashedipour" width="100">
+                <h1>مجید راشدی پور</h1>
+                <h2>توسعه دهنده سمت  سرور</h2>
+            </div>
+            <div class="detail">
+                <div>
+                    <span>تحصیلات</span>
+                    <span>دانشجوی کارشناسی</span>
+                </div>
+                <div>
+                    <span>رشته تحصیلی</span>
+                    <span>مهندسی کامپیوتر</span>
+                </div>
+                <div>
+                    <span>تاریخ تولد</span>
+                    <span>1378/08/02</span>
+                </div>
+                <div>
+                    <span>استان محل تولد</span>
+                    <span>هرمزگان</span>
+                </div>
+                <div>
+                    <span>وضعیت تاهل</span>
+                    <span>مجرد</span>
+                </div>
+                <div>
+                    <span>وضعیت نظام وظیفه</span>
+                    <span>معافیت تحصیلی</span>
+                </div>
+                <div>
+                    <span>تلفن همراه</span>
+                    <span>09179541574</span>
+                </div>
+                <div>
+                    <span>زبان</span>
+                    <span>فارسی</span>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    <nav>
+        <ul>
+            <li class="active">
+                <a href="#" id="home"></a>
+            </li>
+            <li>
+                <a href="#"></a>
+            </li>
+            <li>
+                <a href="#"></a>
+            </li>
+            <li>
+                <a href="#"><img src="styles/icons/sun.svg" alt="Sun"></a>
+            </li>
+            <div class="indicator"></div>
+        </ul>
+        
+    </nav>
+
+    <script>
+        const list = document.querySelectorAll("li");
+        function activeLink() {
+            list.forEach((item) => {
+                item.classList.remove("active");
+                this.classList.add("active");
+            })
+        }
+        list.forEach((item) => {
+            item.addEventListener("click", activeLink)
+        })
+    </script>
+</body>
+</html>
