@@ -34,7 +34,6 @@ main>.home {
     display: flex;
     flex-direction: column;
     align-items: center;
-    display: none;
 }
 main>.home>.photo-box {
     display: flex;
@@ -79,6 +78,7 @@ main>.resume {
     height: 100%;
     display: flex;
     flex-direction: column;
+    display: none;
 }
 main>.resume>div {
     width: 100%;
@@ -149,11 +149,131 @@ main>.resume>.sample-work>div>div>a::after {
     z-index: 1;
 }
 
+/* Resume Section */
+
+main>.message {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    display: none;
+}
+main>.message>h2 {
+    width: 100%;
+    height: 8%;
+    text-align: center;
+}
+main>.message>form {
+    width: 100%;
+    height: 50%;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main>.message>form>input,
+main>.message>form>textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    background: rgba(99, 99, 99, 0.4);
+    color: #fff;
+    border: 0.5px solid #868686;
+    outline: none;
+    
+}
+main>.message>form>textarea {
+    resize: none;
+}
+main>.message>form>input:focus,
+main>.message>form>textarea:focus {
+    background: transparent;
+    border: 0.5px solid #24D18F;
+}
+main>.message>form>button {
+    padding: 5px 30px;
+    font-size: 16px;
+    border-radius: 6px;
+    margin-top: 10px;
+    background: rgba(99, 99, 99, 0.6);
+    border: 0.5px solid #868686;
+    backdrop-filter: blur(20px);
+    z-index: 10;
+}
+main>.message>form>button::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #868686;
+    filter: blur(10px);
+    border-radius: 50%;
+    z-index: 1;
+}
+main>.message>form>button::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: #868686;
+    filter: blur(10px);
+    border-radius: 50%;
+    z-index: 1;
+}
+main>.message>div {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+main>.message>div>div {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+}
+main>.message>div>div>a {
+    width: 48px;
+    height: 48px;
+    background-color: rgba(99, 99, 99, 0.4);
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 36px;
+}
+main>.message>div>div>.instagram {
+    background-image: url(./icons/instagram-icon.svg);
+}
+main>.message>div>div>.telegram {
+    background-image: url(./icons/telegram-icon.svg);
+}
+main>.message>div>div>.linkedin {
+    background-image: url(./icons/linkedin-icon.svg);
+}
+main>.message>div>div>.github {
+    background-image: url(./icons/github-icon.svg);
+}
+main>.message>div>.copyright {
+    font-size: 12px;
+    align-self: center;
+    padding: 2px 10px;
+    background: rgba(99, 99, 99, 0.4);
+    border-radius: 6px;
+}
+
 /* Navigation */
 
 nav {
     width: 100%;
-    height: 10%;
+    height: 9%;
     padding: 10px;
     background: rgba(99, 99, 99, 0.2);
     border-radius: 8px;
@@ -176,11 +296,11 @@ nav>ul>li {
 }
 .indicator {
     width: calc(100%/4 - 35px);
-    height: 60%;
+    height: 70%;
     position: absolute;
     left: 25px;
-    top: 20%;
-    background: rgba(99, 99, 99, 0.8);
+    top: 15%;
+    background: rgba(99, 99, 99, 0.6);
     backdrop-filter: blur(10px);
     border-radius: 6px;
     z-index: 3;
@@ -212,7 +332,7 @@ nav>ul>li {
     z-index: 4;
 }
 
-nav ul li:nth-child(1){
+nav ul li:nth-child(1) {
     background-image: url(./icons/home.svg);
 }
 nav ul li:nth-child(2) {
