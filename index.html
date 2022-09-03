@@ -185,19 +185,28 @@
                 this.classList.add("active");
                 switch (this.classList[0]) {
                     case "nav-home":
-                        document.querySelector(".home").style.display = "flex";
-                        document.querySelector(".resume").style.display = "none";
-                        document.querySelector(".message").style.display = "none";
+                        document.querySelector(".home").style.transform = "translateX(0)";
+                        document.querySelector(".resume").style.transform = "translateX(200%) translateY(-100%)";
+                        document.querySelector(".message").style.transform = "translateX(200%) translateY(-200%)";
+                        document.querySelector(".home").style.opacity = "1";
+                        document.querySelector(".resume").style.opacity = "0";
+                        document.querySelector(".message").style.opacity = "0";
                         break;
                     case "nav-resume":
-                        document.querySelector(".home").style.display = "none";
-                        document.querySelector(".resume").style.display = "flex";
-                        document.querySelector(".message").style.display = "none";
+                        document.querySelector(".home").style.transform = "translateX(-200%)";
+                        document.querySelector(".resume").style.transform = "translateX(0) translateY(-100%)";
+                        document.querySelector(".message").style.transform = "translateX(200%) translateY(-200%)";
+                        document.querySelector(".home").style.opacity = "0";
+                        document.querySelector(".resume").style.opacity = "1";
+                        document.querySelector(".message").style.opacity = "0";
                         break;
                     case "nav-message":
-                        document.querySelector(".home").style.display = "none";
-                        document.querySelector(".resume").style.display = "none";
-                        document.querySelector(".message").style.display = "flex";
+                        document.querySelector(".home").style.transform = "translateX(-200%)";
+                        document.querySelector(".resume").style.transform = "translateX(-200%) translateY(-100%)";
+                        document.querySelector(".message").style.transform = "translateX(0) translateY(-200%)";
+                        document.querySelector(".home").style.opacity = "0";
+                        document.querySelector(".resume").style.opacity = "0";
+                        document.querySelector(".message").style.opacity = "1";
                         break;
                 
                     default:

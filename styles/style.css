@@ -1,3 +1,14 @@
+body::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  body::-webkit-scrollbar-track {
+    background: orange;        /* color of the tracking area */
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: blue;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid orange;  /* creates padding around scroll thumb */
+  }
 * {
     margin: 0;
     padding: 0;
@@ -24,6 +35,7 @@ main {
     background: rgba(99, 99, 99, 0.2);
     color: #fff;
     border-radius: 8px;
+    overflow: hidden;
 }
 
 /* Home Section */
@@ -34,6 +46,8 @@ main>.home {
     display: flex;
     flex-direction: column;
     align-items: center;
+    opacity: 1;
+    transition: 0.5s;
 }
 main>.home>.photo-box {
     display: flex;
@@ -78,7 +92,9 @@ main>.resume {
     height: 100%;
     display: flex;
     flex-direction: column;
-    display: none;
+    transform: translateX(200%) translateY(-100%);
+    opacity: 0;
+    transition: 0.5s;
 }
 main>.resume>div {
     width: 100%;
@@ -103,6 +119,7 @@ main>.resume>.about-me>p {
     width: 100%;
     height: 80%;
     overflow-y: auto;
+    padding-left: 6px;
 }
 main>.resume>.sample-work>div>div {
     display: flex;
@@ -149,7 +166,7 @@ main>.resume>.sample-work>div>div>a::after {
     z-index: 1;
 }
 
-/* Resume Section */
+/* Message Section */
 
 main>.message {
     width: 100%;
@@ -158,7 +175,9 @@ main>.message {
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
-    display: none;
+    transform: translateX(200%) translateY(-200%);
+    opacity: 0;
+    transition: 0.5s;
 }
 main>.message>h2 {
     width: 100%;
@@ -200,6 +219,7 @@ main>.message>form>button {
     margin-top: 10px;
     background: rgba(99, 99, 99, 0.6);
     border: 0.5px solid #868686;
+    color: #fff;
     backdrop-filter: blur(20px);
     z-index: 10;
 }
