@@ -1,14 +1,3 @@
-body::-webkit-scrollbar {
-    width: 12px;               /* width of the entire scrollbar */
-  }
-  body::-webkit-scrollbar-track {
-    background: orange;        /* color of the tracking area */
-  }
-  body::-webkit-scrollbar-thumb {
-    background-color: blue;    /* color of the scroll thumb */
-    border-radius: 20px;       /* roundness of the scroll thumb */
-    border: 3px solid orange;  /* creates padding around scroll thumb */
-  }
 * {
     margin: 0;
     padding: 0;
@@ -58,7 +47,7 @@ main>.home>.photo-box>img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    box-shadow: 0 0 15px #24D18F;
+    box-shadow: 0 0 10px #24D18F;
     margin: 10px 0;
 }
 main>.home>.photo-box>h1 {
@@ -298,6 +287,8 @@ nav {
     background: rgba(99, 99, 99, 0.2);
     border-radius: 8px;
     position: relative;
+    overflow: hidden;
+    transition: 0.6s;
 }
 nav>ul {
     width: 100%;
@@ -353,26 +344,178 @@ nav>ul>li {
 }
 
 nav ul li:nth-child(1) {
-    background-image: url(./icons/home.svg);
+    display: none;
 }
 nav ul li:nth-child(2) {
-    background-image: url(./icons/resume.svg);
+    background-image: url(./icons/home.svg);
 }
 nav ul li:nth-child(3) {
+    background-image: url(./icons/resume.svg);
+}
+nav ul li:nth-child(4) {
     background-image: url(./icons/message.svg);
 }
-nav ul li:nth-child(1).active {
+nav ul li:nth-child(2).active {
     background-image: url(./icons/home-active.svg);
 }
-nav ul li:nth-child(2).active {
+nav ul li:nth-child(3).active {
     background-image: url(./icons/resume-active.svg);
 }
-nav ul li:nth-child(3).active {
+nav ul li:nth-child(4).active {
     background-image: url(./icons/message-active.svg);
 }
-nav ul li:nth-child(2).active ~ .indicator {
+nav ul li:nth-child(3).active ~ .indicator {
     transform: translateX(calc(100% + 30px)); 
 }
-nav ul li:nth-child(3).active ~ .indicator {
+nav ul li:nth-child(4).active ~ .indicator {
     transform: translateX(calc(100% * 2 + 30px * 2));
+}
+
+@media (min-width: 768px) {
+    body {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    main {
+        width: 90%;
+        height: 100%;
+        margin-bottom: 0px;
+        margin-left: 10px;
+    }
+
+    /* Home */
+
+    main>.home {
+        width: 49%;
+        height: 70%;
+    }
+    main>.home>.photo-box>img {
+        width: 200px;
+        height: 200px;
+        margin: 0;
+    }
+    main>.home>.detail>div:nth-child(1),
+    main>.home>.detail>div:nth-child(2) {
+        display: none;
+    }
+
+    /* Resume */
+
+    main>.resume {
+        width: 50%;
+        height: 100%;
+        transform: translateX(-100%) translateY(-70%) !important;
+        opacity: 1 !important;
+        transition: 0.5s;
+    }
+    main>.resume>.skills {
+        height: 40%;
+    }
+    main>.resume>.sample-work {
+        width: 200%;
+        transform: translateX(50%)
+    }
+
+    /* Nvigation */
+
+    nav {
+        width: 10%;
+        height: 40%;
+    }
+    .hid-nav {
+        background: transparent;
+    }
+    .hid-nav .nav-home,
+    .hid-nav .nav-message,
+    .hid-nav .mood,
+    .hid-nav .indicator {
+        opacity: 0;
+    }
+    .hid-nav .nav-home {
+        transform: translateX(-150%);
+    }
+    .hid-nav .nav-message {
+        transform: translateX(-300%);
+    }
+    .hid-nav .mood {
+        transform: translateX(-500%);
+    }
+    .hid-nav .indicator {
+        left: -200%;
+    }
+    nav>ul {
+        flex-direction: column;
+    }
+    nav>ul>li:nth-child(3) {
+        display: none;
+    }
+    .indicator {
+        width: 70%;
+        height: calc(100%/4 - 35px);
+        left: 15%;
+        top: 36px;
+    }
+    .indicator::after {
+        width: 4px;
+        height: 20px;
+        top: calc(50% - 8px);
+        left: 2%;
+    }
+    nav ul li:nth-child(1) {
+        display: block;
+    }
+    nav ul li:nth-child(2).active ~ .indicator {
+        transform: translateY(calc(100% + 27px));
+    }
+    nav ul li:nth-child(4).active ~ .indicator {
+        transform: translateY(calc(200% + 52px));
+    }
+    .container {
+        width: 36px;
+        height: 36px;
+        position: relative;
+        overflow: hidden;
+    }
+    .hamburger {
+        width: 36px;
+        height: 1px;
+        position: absolute;
+        top: 25%;
+        left: 0px;
+        background-color: #fff;
+        transition: 0.5s;
+    }
+    .hamburger::before {
+        content: '';
+        width: 25px;
+        height: 1px;
+        position: absolute;
+        top: 10px;
+        left: 0;
+        background-color: #fff;
+        transition: 0.8s;
+    }
+    .hamburger::after {
+        content: '';
+        width: 20px;
+        height: 1px;
+        position: absolute;
+        top: 20px;
+        left: 0;
+        background-color: #fff;
+        transition: 0.6s;
+    }
+    .close::before {
+        transform: translate(-200%);
+    }
+    .close {
+        top: 45%;
+        transform: rotateZ(45deg);
+    }
+    .close::after {
+        width: 35px;
+        top: 0px;
+        transform: rotateZ(-90deg);
+    }
 }

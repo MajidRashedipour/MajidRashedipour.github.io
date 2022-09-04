@@ -158,18 +158,21 @@
         </section>
         
     </main>
-    <nav>
+    <nav class="">
         <ul>
-            <li class="nav-home active">
+            <li class="container">
+                <span class="hamburger close"></span>
+            </li>
+            <li class="list nav-home active">
                 <a href="#" id="home"></a>
             </li>
-            <li class="nav-resume">
+            <li class="list nav-resume">
                 <a href="#"></a>
             </li>
-            <li class="nav-message">
+            <li class="list nav-message">
                 <a href="#"></a>
             </li>
-            <li>
+            <li class="mood">
                 <a href="#"><img src="styles/icons/sun.svg" alt="Sun"></a>
             </li>
             <div class="indicator"></div>
@@ -178,12 +181,17 @@
     </nav>
 
     <script>
-        const list = document.querySelectorAll("li");
+        document.querySelector('.container').addEventListener("click", () => {
+            document.querySelector(".hamburger").classList.toggle("close");
+            document.querySelector("nav").classList.toggle("hid-nav");
+            
+        });
+        const list = document.querySelectorAll(".list");
         function activeLink() {
             list.forEach((item) => {
                 item.classList.remove("active");
                 this.classList.add("active");
-                switch (this.classList[0]) {
+                switch (this.classList[1]) {
                     case "nav-home":
                         document.querySelector(".home").style.transform = "translateX(0)";
                         document.querySelector(".resume").style.transform = "translateX(200%) translateY(-100%)";
