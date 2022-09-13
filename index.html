@@ -52,6 +52,17 @@
                     <span>فارسی</span>
                 </div>
             </div>
+            <div class="edu">
+                <h3>تحصیلات</h3>
+                <div>
+                    <p>
+                        کارشناسی مهندسی کامپیوتر ( در حال تحصیل )
+                    </p>
+                    <p>
+                        دیپلم علوم تجربی
+                    </p>
+                </div>
+            </div>
         </section>
 
         <!-- Resume Section -->
@@ -116,18 +127,34 @@
                 <div>
                     <div>
                         <h4>وبسایت فروشگاهی</h4>
+                        <div>
+                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است.</p>
+                            <img src="./images/shop.png" alt="eshop">
+                        </div>
                         <a href="#">نمایش</a>
                     </div>
                     <div>
                         <h4>وبسایت آموزشی</h4>
+                        <div>
+                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است.</p>
+                            <img src="./images/shop.png" alt="eshop">
+                        </div>
                         <a href="#">نمایش</a>
                     </div>
                     <div>
                         <h4>وبسایت شخصی</h4>
+                        <div>
+                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است.</p>
+                            <img src="./images/shop.png" alt="eshop">
+                        </div>
                         <a href="#">نمایش</a>
                     </div>
                     <div>
                         <h4>وبسایت اداری</h4>
+                        <div>
+                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است.</p>
+                            <img src="./images/shop.png" alt="eshop">
+                        </div>
                         <a href="#">نمایش</a>
                     </div>
                 </div>
@@ -139,13 +166,20 @@
         <section class="message">
             <h2>ارتباط با من</h2>
             <form class="msg">
+                <h3>ارسال پیام به من</h3>
                 <input type="text" placeholder="نام و نام خانوادگی">
                 <input type="email" placeholder="آدرس ایمیل">
                 <textarea name="message" id="msg" cols="30" rows="10" placeholder="متن پیام"></textarea>
                 <button type="submit">ارسال</button>
             </form>
+            <hr>
             <div>
-                <p><b>آدرس : </b>ایران، استان هرمزگان، شهرستان بندرخمیر، شهر رویدر، روستای رودبار</p>
+                <h3>ارتباط با من</h3>
+                <span>
+                    <p><b>آدرس : </b>ایران، استان هرمزگان، شهرستان بندرخمیر، شهر رویدر، روستای رودبار</p>
+                    <p><b>تلفن : </b>1574 954 917 98+</p>
+                    <p><b>ایمیل : </b>Majidrashedipour@gmail.com</p>
+                </span>
                 <h4>رسانه های اجتماعی : </h4>
                 <div class="social-media">
                     <a href="http://instagram.com/majidrashedipour" class="instagram"></a>
@@ -199,6 +233,7 @@
                         document.querySelector(".home").style.opacity = "1";
                         document.querySelector(".resume").style.opacity = "0";
                         document.querySelector(".message").style.opacity = "0";
+                        document.querySelector("main").classList.remove("tablet");
                         break;
                     case "nav-resume":
                         document.querySelector(".home").style.transform = "translateX(-200%)";
@@ -215,6 +250,7 @@
                         document.querySelector(".home").style.opacity = "0";
                         document.querySelector(".resume").style.opacity = "0";
                         document.querySelector(".message").style.opacity = "1";
+                        document.querySelector("main").classList.add("tablet");
                         break;
                 
                     default:

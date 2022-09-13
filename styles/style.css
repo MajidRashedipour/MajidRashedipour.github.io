@@ -57,7 +57,8 @@ main>.home>.photo-box>h2 {
     font-size: 18px;
     margin-bottom: 10px;
 }
-main>.home>.detail {
+main>.home>.detail,
+main>.home>.edu {
     width: 100%;
     height: 100%;
     background: rgba(99, 99, 99, 0.4);
@@ -66,6 +67,10 @@ main>.home>.detail {
     flex-direction: column;
     justify-content: space-around;
     padding: 10px;
+}
+main>.home>.edu {
+    margin-top: 10px;
+    display: none;
 }
 main>.home>.detail>div {
     width: 100%;
@@ -98,7 +103,14 @@ main>.resume>div {
     overflow-y: hidden;
 }
 main>.resume>.education {
-    height: 25%;
+    height: 30%;
+}
+main>.resume>.education>div,
+main>.home>.edu>div {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 main>.resume>.sample-work {
     margin-bottom: 0;
@@ -106,14 +118,18 @@ main>.resume>.sample-work {
 main>.resume>div>div,
 main>.resume>.about-me>p {
     width: 100%;
-    height: 80%;
+    height: 90%;
     overflow-y: auto;
     padding-left: 6px;
 }
 main>.resume>.sample-work>div>div {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     margin-top: 10px;
+}
+main>.resume>.sample-work>div>div>div {
+    display: none;
 }
 main>.resume>.sample-work>div>div>h4 {
     margin-top: 2px;
@@ -243,7 +259,11 @@ main>.message>div {
     flex-direction: column;
     justify-content: space-between;
 }
-main>.message>div>div {
+main>.message>div>p:nth-child(2),
+main>.message>div>p:nth-child(3) {
+    display: none;
+}
+main>.message>div>.social-media {
     width: 100%;
     display: flex;
     flex-direction: row-reverse;
@@ -276,6 +296,13 @@ main>.message>div>.copyright {
     padding: 2px 10px;
     background: rgba(99, 99, 99, 0.4);
     border-radius: 6px;
+}
+main>.message>hr,
+main>.message>form>h3,
+main>.message>div>h3,
+main>.message>div>span>p:nth-child(2),
+main>.message>div>span>p:nth-child(3) {
+    display: none;
 }
 
 /* Navigation */
@@ -378,7 +405,7 @@ nav ul li:nth-child(4).active ~ .indicator {
         align-items: center;
     }
     main {
-        width: 90%;
+        width: 100%;
         height: 100%;
         margin-bottom: 0px;
         margin-left: 10px;
@@ -388,15 +415,16 @@ nav ul li:nth-child(4).active ~ .indicator {
 
     main>.home {
         width: 49%;
-        height: 70%;
+        height: 60%;
     }
     main>.home>.photo-box>img {
-        width: 200px;
-        height: 200px;
+        width: 180px;
+        height: 180px;
         margin: 0;
     }
     main>.home>.detail>div:nth-child(1),
-    main>.home>.detail>div:nth-child(2) {
+    main>.home>.detail>div:nth-child(2),
+    main>.home>.detail>div:nth-child(7) {
         display: none;
     }
 
@@ -405,23 +433,79 @@ nav ul li:nth-child(4).active ~ .indicator {
     main>.resume {
         width: 50%;
         height: 100%;
-        transform: translateX(-100%) translateY(-70%) !important;
+        transform: translateX(-100%) translateY(-60%) !important;
         opacity: 1 !important;
         transition: 0.5s;
     }
+    main>.resume>.about-me,
     main>.resume>.skills {
-        height: 40%;
+        height: 26%;
     }
+    main>.resume>.education {
+        height: 20%;
+    }
+    
     main>.resume>.sample-work {
         width: 200%;
         transform: translateX(50%)
     }
 
+    .tablet .resume {
+        transform: translateX(-400%) translateY(-70%) !important;
+        opacity: 1 !important;
+    }
+
+    main>.resume>.sample-work>div>div {
+        flex-direction: column;
+        background: rgba(99, 99, 99, 0.6);
+        border-radius: 4px;
+        padding: 10px;
+    }
+    main>.resume>.sample-work>div>div>div {
+        display: flex;
+        flex-direction: row;
+    }
+    main>.resume>.sample-work>div>div>a {
+        display: none;
+    }
+    main>.resume>.sample-work>div>div>div>p {
+        margin-top: 10px;
+        margin-left: 15px;
+    }
+    main>.resume>.sample-work>div>div>div>img {
+        width: 200px;
+        border-radius: 4px;
+    }
+
+    /* Message */
+
+    .tablet .message {
+        transform: translateX(0%) translateY(-160%) !important;
+        opacity: 1 !important;
+    }
+    main>.message>form>input,
+    main>.message>form>textarea {
+        padding: 15px;
+    }
+    main>.message>form>button {
+        padding: 10px 30px;
+    }
+    main>.message>div>div>a {
+        width: 64px;
+        height: 64px;
+        background-size: 48px;
+    }
+    main>.message>div>span>p:nth-child(2),
+    main>.message>div>span>p:nth-child(3) {
+        display: block;
+        margin-top: 10px;
+    }
+
     /* Nvigation */
 
     nav {
-        width: 10%;
-        height: 40%;
+        width: 70px;
+        height: 320px;
     }
     .hid-nav {
         background: transparent;
@@ -517,5 +601,108 @@ nav ul li:nth-child(4).active ~ .indicator {
         width: 35px;
         top: 0px;
         transform: rotateZ(-90deg);
+    }
+}
+
+@media (min-width: 1024px) {
+    /* Home */
+
+    main>.home {
+        width: 29%;
+        height: 90%;
+    }
+    main>.home>.edu {
+        height: 50%;
+        display: flex;
+    }
+
+    /* Resume */
+
+    main>.resume {
+        width: 70%;
+        transform: translateX(-43%) translateY(-90%)!important;
+    }
+    main>.resume>.skills>div>p {
+        margin-top: 5px;
+    }
+    main>.resume>.education {
+        display: none;
+    }
+    main>.resume>.sample-work {
+        width: 100%;
+        height: 80%;
+        transform: translateX(0%)
+    }
+
+    /* Message */
+
+    .tablet .message {
+        transform: translateX(0%) translateY(-190%) !important;
+        opacity: 1 !important;
+    }
+    main>.message {
+        flex-direction: row;
+    }
+    main>.message>h2 {
+        display: none;
+    }
+
+    main>.message>form,
+    main>.message>div {
+        width: 50%;
+        height: 100%;
+    }
+    main>.message>form {
+        padding-left: 20px;
+        padding-right: 10px;
+    }
+    main>.message>div {
+        padding-left: 10px;
+        padding-right: 20px;
+    }
+    main>.message>form>h3 {
+        margin-bottom: 15%;
+    }
+    main>.message>div>h3 {
+        margin-top: 15px;
+        align-self: center;
+    }
+    main>.message>form>input,
+    main>.message>form>textarea {
+        font-size: 16px;
+    }
+    main>.message>hr {
+        margin-top: 10px;
+        height: 90%;
+    }
+    main>.message>div>.social-media {
+        height: 50%;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    main>.message>div>.social-media>a {
+        position: relative;
+        backdrop-filter: blur(20px);
+        background-color: rgba(99, 99, 99, 0.8);
+    }
+    main>.message>div>.social-media>a>span {
+        background-color: rgba(99, 99, 99, 0.4);
+        position: absolute;
+        left: 88%;
+        top: 26%;
+        border-radius: 6px;
+        padding: 5px 15px 7px 15px;
+        color: #fff;
+        z-index: -10;
+    }
+    main>.message>div>.copyright {
+        font-size: 16px;
+        padding: 5px 15px 10px 15px;
+        transform: translateX(55%) translateY(-20%);
+    }
+    main>.message>hr,
+    main>.message>form>h3,
+    main>.message>div>h3{
+        display: block;
     }
 }
